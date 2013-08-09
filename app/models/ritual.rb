@@ -13,8 +13,14 @@ class Ritual
 
   many :steps
 
-  one :user, :as => :creator
-  one :user, :as => :forker
+  belongs_to  :creator, :class_name => "User"
+  many 				:user_rituals
+
+  belongs_to :forked_from, :class_name => "Ritual"
+  many :rituals
+
+
+
 
 
 end

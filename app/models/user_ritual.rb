@@ -1,8 +1,8 @@
 class UserRitual
-  include MongoMapper::Document
+  include MongoMapper::EmbeddedDocument
 
   belongs_to :user
-  belongs_to :ritual
+  one :ritual  
 
   key :starts_on, Date
   key :ends_on, Date

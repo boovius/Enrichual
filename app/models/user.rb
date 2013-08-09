@@ -9,17 +9,28 @@ class User
   key :salt, String
   key :is_male, Boolean
   key :born_on, Date
+
  
   many :user_rituals
+  many :rituals
 
-  key :created_ritual_ids, Array
-  many :created_rituals, :in => :created_ritual_ids
 
-  key :forked_ritual_ids, Array
-  many :forked_rituals, :in => :forked_ritual_ids
 
-  belongs_to :creator, :polymorphic => true
-  belongs_to :forker, :polymorphic => true
+
+  #belongs_to :creator, :polymorphic => true
+  #belongs_to :forkers, :polymorphic => true
+
+  #key :creations, Array
+  #key :forks, Array
+
+  #many :rituals, :as :creations
+  #many :rituals, :as :forks 
+
+  #key :creator_ids, Array
+  #many :rituals, :in => :creator_ids
+
+  #key :forker_ids, Array
+  #many :rituals, :in => :forker_ids
 
 
 end
