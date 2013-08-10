@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $pink: #d4116a;
-$light-pink: rgba(212, 17, 106, .8);
+$light-pink: rgba(212, 17, 106, .5);
 $see-through-white: rgba(255, 255, 255, .4);
 $dark-gray: #333;
 $search-text-size: 28px;
@@ -43,6 +43,10 @@ body {
 	border: none;
 	font-size: $search-text-size;
 	padding-left: 115px;
+}
+
+#search_box::-webkit-input-placeholder{
+	color: $light-pink;
 }
 
 #iwant {
