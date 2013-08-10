@@ -1,3 +1,56 @@
 // Place all the styles related to the Site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$pink: #d4116a;
+$light-pink: rgba(212, 17, 106, .8);
+$see-through-white: rgba(255, 255, 255, .4);
+$dark-gray: #333;
+$search-text-size: 28px;
+
+body {
+	background: #17b960;
+}
+
+.pink {
+	background-color: $pink;
+}
+
+.landing {
+	margin-top: 100px;
+	width: 62.5em;
+}
+
+.landing span {
+	color: $pink;
+}
+
+#intro_box {
+	font-size: 25px;
+	background-color: black;
+	color: white;
+	border: $dark-gray 2px solid;
+	border-radius: 5px;
+}
+
+#search_area{
+	margin-top: 150px;
+}
+
+#search_box{
+	background-color: $see-through-white;
+	border-radius: 5px;
+	border: none;
+	font-size: $search-text-size;
+	padding-left: 115px;
+}
+
+#iwant {
+	top: 18px;
+	font-size: $search-text-size;
+}
+
+#search_button {
+	top: -33px;
+	border-radius: 5px;
+}
