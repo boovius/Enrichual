@@ -1,14 +1,12 @@
 RitualRecipes::Application.routes.draw do
 
   
-  get "rituals/index"
-  get "rituals/new"
-  get "rituals/edit"
-  get "rituals/show"
   root "site#index"
 
   resources :users
   resources :rituals
+
+  get 'rituals/:id/:code' => "rituals#show"
 
   # Login
   get "login" => "session#new"
