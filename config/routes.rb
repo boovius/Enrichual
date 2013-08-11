@@ -4,6 +4,7 @@ RitualRecipes::Application.routes.draw do
   root "site#index"
 
   resources :users
+  resources :rituals
 
   # Login
   get "login" => "session#new"
