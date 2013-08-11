@@ -3,13 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $pink: #d4116a;
-$light-pink: rgba(212, 17, 106, .5);
+$green: #17b960;
+$light-pink: rgba(212, 17, 106, .4);
 $see-through-white: rgba(255, 255, 255, .4);
 $dark-gray: #333;
 $search-text-size: 28px;
+$radius: 5px;
 
 body {
-	background: #17b960;
+	background: $green; 
 }
 
 .pink {
@@ -18,7 +20,7 @@ body {
 
 .landing {
 	margin-top: 100px;
-	width: 62.5em;
+	width: 62.5;
 }
 
 .landing span {
@@ -26,11 +28,11 @@ body {
 }
 
 #intro_box {
-	font-size: 25px;
+	font-size: $search-text-size;
 	background-color: black;
 	color: white;
 	border: $dark-gray 2px solid;
-	border-radius: 5px;
+	border-radius: $radius;
 }
 
 #search_area{
@@ -39,7 +41,7 @@ body {
 
 #search_box{
 	background-color: $see-through-white;
-	border-radius: 5px;
+	border-radius: $radius;
 	border: none;
 	font-size: $search-text-size;
 	padding-left: 115px;
@@ -56,5 +58,5 @@ body {
 
 #search_button {
 	top: -33px;
-	border-radius: 5px;
+	border-radius: $radius;
 }
