@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="large-4 columns box">
+		<h1>Welcome</h1>
+		<p>Please log in with your email and password.</p>
+		<p>If you have not logged in before or forgotten your password, just put in your email and leave the password field blank.  We will send a link to your email with instructions. </p>
+	</div> <!-- end large-4 columns -->
+	<div class="large-7 large-offset-1 columns">
+		<h2>Log in</h2>
+		<form action="/login" method="POST">
+			<%= token_tag form_authenticity_token %>
+			<p class='large-12 column'>
+				<input type="text" id="email" name="email" placeholder="Email address" class='large-4 column'>
+			</p>
+			<p class='large-12 column'>
+				<input type="password" id="password" name="password" placeholder="password" class='large-4 column'>
+				<input type="submit" id="toggle-password-field" class="large-3 button alert postfix" value="Show Password">
+			</p>
+			<p class='large-12 column'>
+				<input type="submit" class=" button">
+			</p>
+		</form>
+	</div> <!-- end 8 columns -->
+</div> <!-- end row -->

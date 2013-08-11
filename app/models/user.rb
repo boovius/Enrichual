@@ -1,12 +1,14 @@
 class User
   include MongoMapper::Document
 
-  
+  before_save :encrypt_password
 
   key :name, String
-  key :email, String
-  key :fish, String
+  key :email, String, unique: true 
   key :salt, String
+  key :fish, String
+  key :code, String
+  key :expires_at, Time
   key :is_male, Boolean
   key :born_on, Date
 
@@ -14,23 +16,38 @@ class User
   many :user_rituals
   many :rituals
 
+  timestamps!
 
+  attr_accessor :password, :password_confirmation
 
+  validate :validate_confirmation
 
-  #belongs_to :creator, :polymorphic => true
-  #belongs_to :forkers, :polymorphic => true
+  def self.authenticate(email, password)
+    user = User.find_by_email(email)
+    if user
+      fish = BCrypt::Engine.hash_secret(password, user.salt)
+      if user.fish == fish
+        return user
+      end
+    end
+    nil
+  end
 
-  #key :creations, Array
-  #key :forks, Array
+  private
 
-  #many :rituals, :as :creations
-  #many :rituals, :as :forks 
+  def validate_confirmation
+     unless password == password_confirmation
+       errors.add( :password_confirmation, "Passwords do not match.")
+     end
+   end
 
-  #key :creator_ids, Array
-  #many :rituals, :in => :creator_ids
+  def encrypt_password
+    unless password.blank?
+      self.salt = BCrypt::Engine.generate_salt
+      self.fish = BCrypt::Engine.hash_secret(password, self.salt)
+    end
+  end
 
-  #key :forker_ids, Array
-  #many :rituals, :in => :forker_ids
 
 
 end

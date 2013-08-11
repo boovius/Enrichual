@@ -51,6 +51,8 @@ GEM
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bson (1.9.1)
     bson_ext (1.9.1)
       bson (~> 1.9.1)
@@ -75,6 +77,7 @@ GEM
       fssm (>= 0.2.7)
       sass (~> 3.1)
     database_cleaner (1.1.1)
+    debug_inspector (0.0.2)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -202,6 +205,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   better_errors
+  binding_of_caller
   bson_ext
   capybara
   compass-rails!

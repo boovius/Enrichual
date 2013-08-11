@@ -13,3 +13,8 @@
  *= require_tree .
  */
  
+ .box {
+ 	border: 2px black solid;
+ 	border-radius: 5px;
+ 	background-color: #17b960;
+ }

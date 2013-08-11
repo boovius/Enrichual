@@ -1,0 +1,58 @@
+<h1>Create Your Account</h1>
+<div class="row">
+  <div class="large-3 columns large-offset-2">
+
+    <%= form_for @user, html: { autocomplete: :off } do |f| %>
+    	<% @registrant = Registrant.find_by_code(params[:code]) %>
+			<%= f.label :email %>
+			<%= f.text_field :email, value: @registrant.email, readonly: true %>
+			<div>
+				<p>
+				  <%= f.label :password %>
+				  <%# autofocus puts the cursor in this input on page load %>
+				  <%= f.text_field :password, autofocus: true %>
+				</p>
+				<p>
+				  <%= f.label :password_confirmation %>
+				  <%= f.text_field :password_confirmation %>
+				</p>
+				  <%#
+				    This hidden field is used to pass the password strength
+				    back to the server so we can be sure the password is
+				    strong enough.
+				  %>
+				  <input id="hidden-strength" type="hidden" name="strength" value="0">
+
+			</div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+			<%= f.label :born_on %>
+			<%= f.date_field :born_on %>
+			<%= f.label :gender, for: :is_male %>
+			<%= f.select :is_male, [['female', false], ['male', true]] %>
+			<p></p>
+			<p>
+        <%# We start with the submit button disabled. %>
+        <%= f.submit "Create Your Account", id: "save-password", class: "button alert disabled" %>
+      </p>
+		<% end %>
+	</div>
+  <div class="large-7 columns">
+    <%#
+      This is the password strength meter. We will use the
+      w-# class to change it using jQuery.
+    %>
+    <div class="progress large-6 strength-meter">
+      <span id="strength-meter" class="meter w-0"></span>
+    </div>
+    <div>
+      Time to crack: <span id="time-to-crack">n/a</span>
+    </div>
+  </div>
+</div>
+
+<%#
+  We link to the strength-meter script here so that it's only
+  loaded on the password reset page, not every page.
+%>
+<script type="text/javascript" src="/js/zxcvbn-async.js"></script>

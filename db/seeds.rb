@@ -1,3 +1,27 @@
+User.destroy_all
+Ritual.destroy_all 
+
+users = User.create([
+  {
+  	name: "Vanessa Vengco",
+    email: "vengco@gmail.com",
+    password: "12345",
+    password_confirmation: "12345"
+  },
+  {
+  	name: "Jane Papa",
+    email: "jane@papa.com",
+    password: "12345",
+    password_confirmation: "12345"
+  },
+  {
+  	name: "Tim Baby",
+    email: "timmy@baby.com",
+    password: "12345",
+    password_confirmation: "12345"
+  }
+])
+
 new_ritual = Ritual.create({
 	title: 'Sleep Like a Saint',
 	target: 'Sleep',
