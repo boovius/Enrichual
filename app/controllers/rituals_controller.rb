@@ -20,6 +20,7 @@ class RitualsController < ApplicationController
   	 @step1 = @ritual.steps[0]
   	 @step2 = @ritual.steps[1]
   	 @step3 = @ritual.steps[2]
+  	 @step_temp = @ritual.steps[0]
 
   end
 

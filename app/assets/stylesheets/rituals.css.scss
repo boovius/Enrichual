@@ -7,6 +7,7 @@ $green: #27ae60;
 	background-color: #fff;
 	padding-right: 20px;
 	padding-top: 20px;
+	overflow: scroll;
 }
 
 .rit_title {
@@ -25,6 +26,10 @@ $green: #27ae60;
 
 .step:hover {
 	background-color: $green;
+}
+
+.step_key {
+	font-weight: bold;
 }
 
 #begin div {

@@ -1,7 +1,2 @@
-<div class='description'>
-	<ul>
-		<li><%= @step2.description %></li>
-		<li><%= @step2.location %></li>
-		<li><%= @step2.duration %> mins</li>
-	</ul>
-</div>
+<% @step_temp = @step2 %>
+<%= render partial: 'step_temp' %>
