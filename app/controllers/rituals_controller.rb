@@ -7,6 +7,8 @@ class RitualsController < ApplicationController
 
   	 @partial = params[:code]
 
+  	 puts '*'*20
+  	 puts params
   	 puts @partial
   	 
   	 if @partial

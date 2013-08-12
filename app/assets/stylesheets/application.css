@@ -21,5 +21,9 @@
  .green_box {
  	border: 2px black solid;
  	border-radius: 5px;
- 	background-color: #17b960;
+ 	background-color: #27ae60;
  }
+
+.green {
+	background-color: #27ae60;
+}
