@@ -46,3 +46,12 @@ $green: #27ae60;
 	font-style: italic;
 	margin-bottom: 10px;
 }
+
+#total_duration {
+	float: right;
+}
+
+#total_duration span {
+	font-size: .8em;
+	font-weight: normal;
+}

@@ -28,6 +28,9 @@
 				<a href="<%= @ritual._id %>/step3 "><h4>Step 3: &nbsp&nbsp"<%=@ritual.steps[2].name %>"</h4></a>
 				<%= if @partial == "step3" then render partial: "step3" end %>
 			</div>
+			<div id='total_duration'>
+				<h5><span>Total Time Per Period: </span><%= @ritual.total_duration %></h5>
+			</div> 
 		</div>
 		<div id='comments' class='large-3 large-offset-1 columns box'>
 			<h4>Users' Comments</h4>

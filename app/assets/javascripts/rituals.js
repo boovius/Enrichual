@@ -12,8 +12,6 @@ $(function() {
   
   $(".step a").click(function(event) {
     var href = $(this).attr("href");
-
-    console.log(href.slice('/step'));
     
     history.pushState({}, '', href);
 
