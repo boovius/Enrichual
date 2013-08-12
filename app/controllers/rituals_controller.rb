@@ -10,17 +10,18 @@ class RitualsController < ApplicationController
   	 puts '*'*20
   	 puts params
   	 puts @partial
-  	 
-  	 if @partial
-  	   if request.xhr?
-  	     render :partial => "#{params[:code]}"
-  	   end
-  	 end
+  	
 
   	 @step1 = @ritual.steps[0]
   	 @step2 = @ritual.steps[1]
   	 @step3 = @ritual.steps[2]
   	 @step_temp = @ritual.steps[0]
+
+   	 if @partial
+  	   if request.xhr?
+  	     render :partial => "#{params[:code]}"
+  	   end
+  	 end
 
   end
 
