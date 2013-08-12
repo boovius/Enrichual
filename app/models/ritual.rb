@@ -20,7 +20,22 @@ class Ritual
   many :rituals
 
 
-
+  def total_duration 
+    total_duration = 0
+    steps.each do |step| 
+      total_duration = total_duration + step.duration 
+    end
+    hours = total_duration/60
+    mins = total_duration%60
+    if mins == 0
+      total duration = "#{hours} hours"
+    elsif hours == 0
+      total_duration = "#{mins} minutes"  
+    else
+      total_duration = "#{hours} hours and #{mins} minutes"
+    end
+    total_duration
+  end
 
 
 end
