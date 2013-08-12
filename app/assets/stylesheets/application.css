@@ -13,6 +13,21 @@
  *= require_tree .
  */
  
+html, body {
+	height: 100%;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
+}
+
+.push {
+	height: 60px;
+}
+
 .box {
  	border: 2px black solid;
  	border-radius: 5px;
@@ -31,3 +46,8 @@
 ul {
 	list-style: none;
 }
+
+.right {
+	float: right;
+}
+

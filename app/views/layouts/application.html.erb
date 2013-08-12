@@ -21,8 +21,12 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
-    <%= yield %>
+    
+    <div class='wrapper'>
+      <%= render 'layouts/header' %>
+      <%= yield %>
+      <div class='push'></div>
+    </div>
     <%= render 'layouts/footer' %>
     <%= javascript_include_tag "application" %>
   </body>
