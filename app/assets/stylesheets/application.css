@@ -27,3 +27,7 @@
 .green {
 	background-color: #27ae60;
 }
+
+ul {
+	list-style: none;
+}

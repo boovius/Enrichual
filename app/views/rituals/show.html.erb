@@ -17,14 +17,16 @@
 		</div>
 		<div id='steps' class='large-7 large-offset-1 columns'>
 			<div id='step_1' class='step'>
-				<a href="<%= @ritual._id %>/step1"><h4>Step 1: &nbsp&nbsp"<%=@ritual.steps[0].name %>"</h4></a>
-				<%= if @partial == "step1" then render partial: "step1" end %>
+				<h4>Step 1: &nbsp&nbsp"<%=@ritual.steps[0].name %>"</h4>
+				<%= render partial: "step1" %>
 			</div>
 			<div id='step_2' class='step'>
 				<h4>Step 2: &nbsp&nbsp"<%=@ritual.steps[1].name %>"</h4>
+				<%= render partial: "step2" %>
 			</div>
 			<div id='step_3' class='step'>
 				<h4>Step 3: &nbsp&nbsp"<%=@ritual.steps[2].name %>"</h4>
+				<%= render partial: "step3" %>
 			</div>
 		</div>
 		<div id='comments' class='large-3 large-offset-1 columns box'>
