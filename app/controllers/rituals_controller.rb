@@ -6,12 +6,7 @@ class RitualsController < ApplicationController
   	 @ritual = Ritual.find params[:id]
 
   	 @partial = params[:code]
-
-  	 puts '*'*20
-  	 puts params
-  	 puts @partial
   	
-
   	 @step1 = @ritual.steps[0]
   	 @step2 = @ritual.steps[1]
   	 @step3 = @ritual.steps[2]

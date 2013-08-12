@@ -20,11 +20,11 @@
 				<a href="<%= @ritual._id %>/step1 "><h4>Step 1: &nbsp&nbsp"<%=@ritual.steps[0].name %>"</h4></a>
 				<%= if @partial == "step1" then render partial: "step1" end %>
 			</div>
-			<div id='step_2' class='step'>
+			<div id='step2' class='step'>
 				<a href="<%= @ritual._id %>/step2 "><h4>Step 2: &nbsp&nbsp"<%=@ritual.steps[1].name %>"</h4></a>
 				<%= if @partial == "step2" then render partial: "step2" end %>
 			</div>
-			<div id='step_3' class='step'>
+			<div id='step3' class='step'>
 				<a href="<%= @ritual._id %>/step3 "><h4>Step 3: &nbsp&nbsp"<%=@ritual.steps[2].name %>"</h4></a>
 				<%= if @partial == "step3" then render partial: "step3" end %>
 			</div>
