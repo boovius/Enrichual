@@ -4,7 +4,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]
+
+    if params[:id].to_s == session[:user_id].to_s
+      @user = User.find params[:id]
+    else
+      render :unauth_access 
+    end
+   
   end
 
   def new
