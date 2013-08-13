@@ -5,7 +5,6 @@ class RitualsController < ApplicationController
   def show
   	 @ritual = Ritual.find params[:id]
 
-     puts @ritual.comments
      @comments = @ritual.comments
 
   	 @partial = params[:code]
