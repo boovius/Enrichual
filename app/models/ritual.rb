@@ -11,13 +11,19 @@ class Ritual
   key :max_rating_descrip, String
   key :users_rating, Integer
 
+  #embedded associations
   many :steps
+  many :comments
 
+  #creator reference assocation
   belongs_to  :creator, :class_name => "User"
   many 				:user_rituals
 
+  #forked from original ritual reference association
   belongs_to :forked_from, :class_name => "Ritual"
   many :rituals
+
+  timestamps!
 
 
   def total_duration 

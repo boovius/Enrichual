@@ -16,6 +16,8 @@ class User
   many :user_rituals
   many :rituals
 
+  many :comments
+
   timestamps!
 
   attr_accessor :password, :password_confirmation
