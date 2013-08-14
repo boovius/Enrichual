@@ -17,6 +17,15 @@ html, body {
 	height: 100%;
 }
 
+.right {
+	float: right;
+	text-align: right;
+}
+
+.left {
+	float: left;
+}
+
 .wrapper {
 	min-height: 100%;
 	height: auto !important;
@@ -28,12 +37,15 @@ html, body {
 	height: 60px;
 }
 
+.round {
+	border-radius: 5px;
+}
+
 .box {
  	border: 2px black solid;
- 	border-radius: 5px;
- }
+}
 
- .green_box {
+.green_box {
  	border: 2px black solid;
  	border-radius: 5px;
  	background-color: #27ae60;
@@ -43,11 +55,20 @@ html, body {
 	background-color: #27ae60;
 }
 
+.sea_green {
+	background-color: #16A085;
+}
+
+.pink {
+	background-color: #d4116a;
+}
+.white {
+	background-color: #fff;
+}
+
 ul {
 	list-style: none;
 }
 
-.right {
-	float: right;
-}
+
 

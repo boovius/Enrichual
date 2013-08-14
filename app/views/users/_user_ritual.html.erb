@@ -1,10 +1,18 @@
-<div class='user_show_ritual box'>
-	<h3>Ritual Name<%= ritual.name %></h3>
-</div>
-<div class='user_show_ritual_data box'>
-	<h3>Ritual Data</h3>
-	<ul>
-		<li></li>
-		<li></li>
-	</ul>		
-</div>
+<% @user_rituals.each do |r| %>
+	
+	<div class='user_show_ritual_title'>
+		<% @ritual = Ritual.find(r.ritual_id) %>
+		<h3><%= link_to @ritual.title, @ritual %></h3>
+	</div>
+	<div class='user_show_ritual_data large-offset-2 columns'>
+		<% r.daily_raitings.each do |dr| %>
+		<ul class='left raiting'>
+			<li class='date'><%= dr['date'] %></li>
+			<li class='score'><%= dr['raiting'] %></li>
+			<li class="divider"></li>
+		</ul>		
+		<% end %>
+	</div>
+	<hr>
+
+<% end %>

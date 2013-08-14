@@ -5,11 +5,25 @@ class UsersController < ApplicationController
 
   def show
 
-    if params[:id].to_s == session[:user_id].to_s
-      @user = User.find params[:id]
-    else
-      render :unauth_access 
-    end
+    
+      @user = User.find session[:user_id]
+
+      puts '*' * 20 
+      puts 'user id'
+      puts @user.id
+      
+      @user_rituals = @user.user_rituals
+
+      puts '*' * 20
+      puts 'user rituals' 
+      puts @user_rituals
+
+      @created_rituals = Ritual.find_all_by_creator_id(@user.id)
+
+      puts '*' * 20 
+      puts 'created rituals'
+      puts @created_rituals
+
    
   end
 

@@ -21,7 +21,7 @@
           <a><%= user.name %></a>
           <ul class="dropdown">
             <li><label><%= user.name %></label></li>
-            <li><%= link_to user.name, user_path(user.id) %></li>
+            <li><%= link_to user.name, "me" %></li>
             <li class="divider"></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>

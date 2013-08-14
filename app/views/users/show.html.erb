@@ -1,7 +1,30 @@
-<% unless @user_rituals == nil %>
-	<% @user_rituals.each do |r| %>
-		<%= render partial: 'user_ritual', ritual: r %>
-	<%end %>
-<% else %>
-	<h5>You have not implemented any rituals yet</h5>
-<% end %>
+<style>
+	body {
+		background-color: #d4116a;
+	}
+</style>
+<div class='row white round'>
+	<h1 class='large-12 columns'><%= @user.name %></h1>
+	<!-- implemented rituals -->
+	<div class='user_show_ritual large-6 large-offset-1 columns'>
+		<% unless @user_rituals.empty? %>
+				<%= render partial: 'user_ritual' %>
+		<% else %>
+			<h6>You have not implemented any rituals yet.  <%= link_to 'Go find one!', root_url %> </h6>
+			<br>
+			<br>
+			<hr>
+		<% end %>
+	</div>
+	<!-- created rituals -->
+	<div class='user_created_ritual large-3 large-offset-1 columns sea_green'>
+		<h5>Rituals Created:</h5>
+		<% unless @created_rituals.empty? %> 
+				<%= render partial: 'created_ritual' %>
+		<% else %> 
+			<p>You have not created any rituals.</p>
+			<hr>
+		<% end %> 
+	</div>
+
+</div>

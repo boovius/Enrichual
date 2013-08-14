@@ -3,7 +3,9 @@ RitualRecipes::Application.routes.draw do
   
   root "site#index"
 
-  resources :users
+  resources :users #, except: :show
+  #get '/me' => 'users#show'
+  # get 'users/:id' => 'users#show', as: 'me'
   resources :rituals
 
   get 'rituals/:id/:code' => "rituals#show"
