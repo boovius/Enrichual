@@ -1,0 +1,2 @@
+module UserRitualsHelper
+end

@@ -1,14 +1,21 @@
 RitualRecipes::Application.routes.draw do
 
   
+  get "user_rituals/new"
+  get "user_rituals/post"
   root "site#index"
 
-  resources :users #, except: :show
+  resources :users do 
+     get 'user-rituals/new' => "user_rituals#new"
+     post 'user-rituals/:id' => "user_rituals#create"
+  end #, except: :show 
   #get '/me' => 'users#show'
   # get 'users/:id' => 'users#show', as: 'me'
   resources :rituals
 
   get 'rituals/:id/:code' => "rituals#show"
+
+ 
 
   # Login
   get "login" => "session#new"

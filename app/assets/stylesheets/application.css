@@ -12,18 +12,10 @@
  *= require_self
  *= require_tree .
  */
- 
+
+/* footer css */ 
 html, body {
 	height: 100%;
-}
-
-.right {
-	float: right;
-	text-align: right;
-}
-
-.left {
-	float: left;
 }
 
 .wrapper {
@@ -37,6 +29,42 @@ html, body {
 	height: 60px;
 }
 
+/* colors */
+.green {
+	background-color: #27ae60;
+}
+
+.sea_green {
+	background-color: #16A085;
+}
+
+.pink {
+	background-color: #d4116a;
+}
+
+.white {
+	background-color: #fff;
+}
+
+
+/* floats and alignments */
+
+.right {
+	float: right;
+	text-align: right;
+}
+
+.left {
+	float: left;
+}
+
+/* spacing and marging and padding */
+
+.bottom-breath {
+	margin-bottom: 20px;
+}
+
+/* box and containers */
 .round {
 	border-radius: 5px;
 }
@@ -51,24 +79,13 @@ html, body {
  	background-color: #27ae60;
  }
 
-.green {
-	background-color: #27ae60;
-}
-
-.sea_green {
-	background-color: #16A085;
-}
-
-.pink {
-	background-color: #d4116a;
-}
-.white {
-	background-color: #fff;
-}
-
+/* lists */
 ul {
 	list-style: none;
 }
+
+
+
 
 
 
