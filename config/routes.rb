@@ -1,8 +1,6 @@
 RitualRecipes::Application.routes.draw do
 
   
-  get "user_rituals/new"
-  get "user_rituals/post"
   root "site#index"
 
   resources :users do 
@@ -11,7 +9,7 @@ RitualRecipes::Application.routes.draw do
   #get '/me' => 'users#show'
   # get 'users/:id' => 'users#show', as: 'me'
   resources :rituals do
-     get 'user-rituals/new' => "user_rituals#new"
+     get 'user-rituals/new' => "user_rituals#new", as: :new_user_ritual
   end
 
   get 'rituals/:id/:code' => "rituals#show"

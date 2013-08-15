@@ -1,10 +1,8 @@
-$pink: #d4116a;
-$light-pink: rgba(212, 17, 106, .7);
-$green: #27ae60;
+@import "variables";
 
 .ritual {
 	border-radius: 10px;
-	background-color: #fff;
+	background-color: #ECF0F1;
 	padding-right: 20px;
 	padding-top: 20px;
 	overflow: scroll;
@@ -21,24 +19,23 @@ $green: #27ae60;
 	margin-bottom: 15px;
 	border-radius: 20px;
 
-	background-color: #ccc;
+	background-color: $my-blue;
 }
 
 .step:hover {
-	background-color: $green;
+	background-color: $nephritis;
 }
 
 .step_key {
 	font-weight: bold;
 }
 
-#begin div {
+#begin {
 	margin-top: 50px;
 	background-color: $light-pink; 
 }
 
-#begin div:hover {
-	background-color: rgba(212, 17, 106, .7);
+#begin:hover {	
 	background-color: $pink;
 }
 
@@ -57,6 +54,6 @@ $green: #27ae60;
 }
 
 #comments {
-	background-color: #eee;
+	background-color: #ccc;
 	border: none;
 }

@@ -1,6 +1,6 @@
 <style>
 	body {
-		background: #17b960; 
+		background: #27AE60; 
 	}
 </style>
 
@@ -38,8 +38,8 @@
 		</div>
 	</div>
 
-	<div id='begin' class='large-12 columns'>
-		<div class='large-6 large-offset-3 small-centered columns button large'><%= link_to 'Begin', url %></div>
+	<div class='large-12 columns'>
+		<%= button_to 'Begin', ritual_new_user_ritual_path({ritual_id: @ritual.id}), {method: :get, class: 'large-6 large-offset-3 small-centered columns button large', id: 'begin' }  %>
 	</div>
 
 </div>
