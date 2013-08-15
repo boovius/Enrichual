@@ -4,22 +4,21 @@
 
 	<div id='starting_level' class='large-8 large-offset-2 columns box bottom-breath'>
 		<h5>Pick Your Starting Level</h5>
-		<p class='large-5 columns'>This is where you input how you rate where you are currently so we can track how the ritual affects this portion of your life.</p>
+		<p class='large-5 columns'>This is where you rate your current state so we can track how this ritual affects your life.</p>
+		<div id='slider_val' class='large-1 large-offset-5 columns '>0</div>
 		<div id='entry_slider' class='large-8 large-offset-2 columns'></div>
 
 		<div id='min_legend' class='large-2 large-offset-1 columns'>
 			<ul>
 				<li class='legend-num'>0</li>
-				<li class='legend-descrip'>min legend</li>
+				<li class='legend-descrip'><%= @program.min_rating_descrip %></li>
 			<ul>
 		</div>
 
-		<div id='slider_val' class='large-6 columns center'>0</div>
-
-		<div id='max_legend' class='large-2 columns left'>
+		<div id='max_legend' class='large-2 large-offset-6 columns left'>
 			<ul>
 				<li class='legend-num'>10</li>
-				<li class='legend-descrip'>max legend</li>
+				<li class='legend-descrip'><%= @program.max_rating_descrip %></li>
 			</ul>
 		</div>
 

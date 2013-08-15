@@ -13,9 +13,14 @@
 }
 
 .legend-descrip {
-	font-size: .8em;
+	font-size: .5em;
+	font-weight: bold;
 }
 
 #starting_level p, #check_in_time p {
 	font-size: .7em;
+}
+
+#slider_val {
+	font-size: 1.3em;
 }
