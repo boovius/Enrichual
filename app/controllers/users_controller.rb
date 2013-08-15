@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     
       @user = User.find session[:user_id]
       
-      @user_rituals = @user.user_rituals
+      @rituals = @user.rituals
 
-      @created_rituals = Ritual.find_all_by_creator_id(@user.id)
+      @created_programs = Program.find_all_by_creator_id(@user.id)
 
       # puts '*' * 20 
       # puts 'created rituals'

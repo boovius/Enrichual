@@ -13,8 +13,8 @@ class User
   key :born_on, Date
 
  
-  many :user_rituals
   many :rituals
+  many :programs
 
   many :comments
 

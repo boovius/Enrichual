@@ -1,59 +1,21 @@
-@import "variables";
+@import 'variables';
 
-.ritual {
-	border-radius: 10px;
-	background-color: #ECF0F1;
-	padding-right: 20px;
-	padding-top: 20px;
-	overflow: scroll;
+.program-title a {
+	color: $pink;
 }
 
-.rit_title {
-	font-style: italic;
-	text-decoration: underline;
+.program-title a:hover {
+	color: $sea-green;
 }
 
-.step {
-	padding: 2px;
-	padding-left:  20px;
-	margin-bottom: 15px;
-	border-radius: 20px;
-
-	background-color: $my-blue;
+.legend-num {
+	text-align: center;
 }
 
-.step:hover {
-	background-color: $nephritis;
-}
-
-.step_key {
-	font-weight: bold;
-}
-
-#begin {
-	margin-top: 50px;
-	background-color: $light-pink; 
-}
-
-#begin:hover {	
-	background-color: $pink;
-}
-
-.frequency {
-	font-style: italic;
-	margin-bottom: 10px;
-}
-
-#total_duration {
-	float: right;
-}
-
-#total_duration span {
+.legend-descrip {
 	font-size: .8em;
-	font-weight: normal;
 }
 
-#comments {
-	background-color: #ccc;
-	border: none;
+#starting_level p, #check_in_time p {
+	font-size: .7em;
 }

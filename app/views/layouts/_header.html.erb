@@ -16,7 +16,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% unless session[:user_id] == nil %>
-        <li><%= link_to 'Create New Ritual', new_ritual_path %></li>
+        <li><%= link_to 'Create New Ritual', new_program_path %></li>
         <li class="divider"></li>
         <% user = User.find(session[:user_id]) %>
         <li class="has-dropdown">

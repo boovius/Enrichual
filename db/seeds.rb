@@ -1,5 +1,5 @@
 User.destroy_all
-Ritual.destroy_all
+Program.destroy_all
 
 user1 = User.create({
   	name: "Vanessa Vengco",
@@ -33,7 +33,7 @@ comment2 = Comment.new({
 	user: user3
 })
 
-sleep1 = Ritual.create({
+sleep1 = Program.create({
 	title: 'Sleep Like a Saint',
 	target: 'Sleep',
 	objective: 'get better sleep',
@@ -77,7 +77,7 @@ sleep1 = Ritual.create({
 	users_rating: '8.2'
 })
 
-sleep2 = Ritual.create({
+sleep2 = Program.create({
 	title: 'Sleep Like a Badass',
 	target: 'Sleep',
 	objective: 'get better sleep',
@@ -121,8 +121,8 @@ sleep2 = Ritual.create({
 	users_rating: '8.2'
 })
 
-tsleep = UserRitual.new({
-	ritual: sleep1,
+tsleep = Ritual.new({
+	program: sleep1,
 	daily_raitings: [
 		{
 			raiting: 6,
@@ -158,5 +158,5 @@ tbone = User.create({
     born_on: "1983-05-12",
     password: "12345",
     password_confirmation: "12345",
-    user_rituals: [tsleep]
+    rituals: [tsleep]
 })

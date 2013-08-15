@@ -2,13 +2,6 @@ require 'spec_helper'
 
 describe RitualsController do
 
-  describe "GET 'index'" do
-    it "returns http success" do
-      get 'index'
-      response.should be_success
-    end
-  end
-
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
@@ -16,17 +9,10 @@ describe RitualsController do
     end
   end
 
-  describe "GET 'edit'" do
+  describe "GET 'post'" do
     it "returns http success" do
-      # get 'edit'
-      # response.should be_success
-    end
-  end
-
-  describe "GET 'show'" do
-    it "returns http success" do
-      # get 'show'
-      # response.should be_success
+      get 'post'
+      response.should be_success
     end
   end
 

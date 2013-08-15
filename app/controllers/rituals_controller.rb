@@ -1,32 +1,23 @@
 class RitualsController < ApplicationController
-  def index
-  end
-
-  def show
-  	 @ritual = Ritual.find params[:id]
-
-     @comments = @ritual.comments
-
-  	 @partial = params[:code]
-  	
-  	 @step1 = @ritual.steps[0]
-  	 @step2 = @ritual.steps[1]
-  	 @step3 = @ritual.steps[2]
-  	 @step_temp = @ritual.steps[0]
-
-   	 if @partial
-  	   if request.xhr?
-  	     render :partial => "#{params[:code]}"
-  	   end
-  	 end
-
-  end
 
   def new
+  	@program = Program.find_by_id(params[:program_id])
+
   end
 
-  def edit
+  def create
+  	program = Program.find (params[:ritual][:program_id])
+  	ritual = Ritual.new(ritual_params)
+  	ritual.title = ritual.title
+
+  	current_user.rituals << ritual
+  	current_user.save 
   end
 
 
+  private
+
+  def ritual_params
+  	params.require(:ritual).permit(:program_id, :starts_on, :ends_on, :starting_level)
+  end
 end

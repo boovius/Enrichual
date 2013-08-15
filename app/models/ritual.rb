@@ -1,6 +1,9 @@
 class Ritual
-  include MongoMapper::Document
+  include MongoMapper::EmbeddedDocument
 
+  belongs_to :user
+
+  # pattern keys
   key :title, String
   key :target, String
   key :objective, String
@@ -10,38 +13,16 @@ class Ritual
   key :min_rating_descrip, String
   key :max_rating_descrip, String
   key :users_rating, Integer
+  key :program_id, String
 
-  #embedded associations
-  many :steps
-  many :comments
-
-  #creator reference assocation
-  belongs_to  :creator, :class_name => "User"
-  many 				:user_rituals
-
-  #forked from original ritual reference association
-  belongs_to :forked_from, :class_name => "Ritual"
-  many :rituals
-
-  timestamps!
+  #unique keys
+  key :starts_on, Date
+  key :ends_on, Date
+  key :starting_level, Integer
 
 
-  def total_duration 
-    total_duration = 0
-    steps.each do |step| 
-      total_duration = total_duration + step.duration 
-    end
-    hours = total_duration/60
-    mins = total_duration%60
-    if mins == 0
-      total duration = "#{hours} hours"
-    elsif hours == 0
-      total_duration = "#{mins} minutes"  
-    else
-      total_duration = "#{hours} hours and #{mins} minutes"
-    end
-    total_duration
-  end
+  
+  many :daily_ratings
 
 
 end
