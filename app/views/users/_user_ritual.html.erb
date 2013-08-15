@@ -1,7 +1,7 @@
-<% @user_rituals.each do |r| %>
+<% @rituals.each do |r| %>
 	
 	<div class='user_show_ritual_title'>
-		<% @ritual = Ritual.find(r.ritual_id) %>
+		<% @ritual = Program.find(r.program_id) %>
 		<h3><%= link_to @ritual.title, @ritual %></h3>
 	</div>
 	<div class='user_show_ritual_data large-offset-2 columns'>
