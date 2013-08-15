@@ -1,6 +1,21 @@
 @import 'variables';
 
-a {
+.rit-title a {
 	color: $pink;
 }
 
+.rit-title a:hover {
+	color: $sea-green;
+}
+
+.legend-num {
+	text-align: center;
+}
+
+.legend-descrip {
+	font-size: .8em;
+}
+
+#starting_level p, #check_in_time p {
+	font-size: .7em;
+}

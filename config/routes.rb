@@ -7,6 +7,7 @@ RitualRecipes::Application.routes.draw do
 
   resources :users do 
      get 'user-rituals/new' => "user_rituals#new"
+     get 'user-rituals/test' => "user_rituals#test"
      post 'user-rituals/:id' => "user_rituals#create"
   end #, except: :show 
   #get '/me' => 'users#show'

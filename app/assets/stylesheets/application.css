@@ -58,6 +58,10 @@ html, body {
 	float: left;
 }
 
+.center {
+	text-align: center;
+}
+
 /* spacing and marging and padding */
 
 .bottom-breath {
