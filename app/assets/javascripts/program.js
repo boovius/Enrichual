@@ -41,8 +41,8 @@ $(function() {
     event.preventDefault();
   });
   
-  // $.History.on('change', function(event, url, type) {
-  //     showPartial(url);
-  // }).listen('pathname');    
+  $.History.on('change', function(event, url, type) {
+      showPartial(url);
+  }).listen('pathname');    
 
 });

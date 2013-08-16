@@ -1,7 +1,7 @@
 class Program
   include MongoMapper::Document
 
-  key :title, String
+  key :title, String, unique: true 
   key :target, String
   key :objective, String
   key :description, String

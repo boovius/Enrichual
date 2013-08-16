@@ -1,23 +1,24 @@
 <% @rituals.each do |r| %>
-	
-	<div class='user_show_ritual_title'>
-		<% @ritual = Program.find(r.program_id) %>
-		<h3><%= link_to @ritual.title, @ritual %></h3>
-	</div>
-	<div class='user_show_ritual_data large-offset-2 columns'>
-		<% unless r.daily_ratings.empty? %> 
-			<% r.daily_ratings.each do |dr| %>
-			<ul class='left rating'>
-				<li class='date'><%= dr['date'] %></li>
-				<li class='score'><%= dr['rating'] %></li>
-				<li class="divider"></li>
-			</ul>		
-			<% end %>
-		<% else %> 
-			<div>No raitings inputted yet.</div>
-		<% end %> 
+	<div class='user_show_ritual'>	
+		<div class='user_show_ritual_title'>
+			<% @program = Program.find(r.program_id) %>
+			<h3 class='ilb'><%= link_to @program.title, @program %></h3>
+			<h3 class='right right-breath'><%= r.starting_level %></h3>
+		</div>
+		<div class='user_show_ritual_data large-offset-2 columns'>
+			<% unless r.daily_ratings.empty? %> 
+				<% r.daily_ratings.each do |dr| %>
+				<ul class='left rating'>
+					<li class='date'><%= dr['date'] %></li>
+					<li class='score'><%= dr['rating'] %></li>
+					<li class="divider"></li>
+				</ul>		
+				<% end %>
+			<% else %> 
+				<div>No ratings inputted yet.</div>
+			<% end %> 
 
+		</div>
+		<hr>
 	</div>
-	<hr>
-
 <% end %>

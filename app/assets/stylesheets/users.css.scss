@@ -1,5 +1,7 @@
-.user_show_ritual{
+@import "variables";
 
+.user_show_ritual:hover{
+	background-color: #ddd;
 }
 
 .user_show_ritual_title h3 {
@@ -7,7 +9,7 @@
 }
 
 .user_show_ritual_data{
-
+	
 }
 
 .rating {
@@ -33,12 +35,12 @@
 
 .user_created_ritual {
 	a {
-		color: #2C3E50;
+		color: $denim;
 		font-weight: bold;
 		font-style: italic;
 	}
 	a:hover {
-		color: #7301B3;
+		color: $my-blue;
 	}
 }
 

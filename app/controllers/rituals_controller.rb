@@ -5,9 +5,6 @@ class RitualsController < ApplicationController
     @ritual = Ritual.new
     @user = current_user
 
-    puts '*' *20
-    puts @user
-
   end
 
   def create
@@ -26,6 +23,8 @@ class RitualsController < ApplicationController
 
   	current_user.rituals << ritual
   	current_user.save 
+
+    redirect_to user_path(current_user.id), notice: "Ritual successfully implemented!"
   end
 
 

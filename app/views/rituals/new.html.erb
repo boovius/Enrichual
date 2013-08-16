@@ -7,7 +7,6 @@
 		<h5>Pick Your Starting Level</h5>
 		<p class='large-5 columns'>This is where you rate your current state so we can track how this ritual affects your life.</p>
 		<div id='slider_val' class='large-1 large-offset-5 columns '>0</div>
-		<%= f.hidden_field :starting_level %> 
 
 		<div id='entry_slider' class='large-8 large-offset-2 columns'></div>
 
@@ -25,13 +24,15 @@
 			</ul>
 		</div>
 
+		<%= f.hidden_field :starting_level %> 
+
 	</div>
 
 		
 	<div id='check_in_time' class='large-8 large-offset-2 columns box bottom-breath'>
 		<h5>Check In Time:</h5>
 		<p class='large-5 columns'>Here input a time we can check in with you each day to see how you're doing.  It'll require an input of one number.</p>
-		<%= f.time_field :checkin_time %>
+		<%= f.time_field :checkin_time, class: "large-3 left large-offset-2 columns" %>
 
 	</div>
 
@@ -51,6 +52,8 @@
 
 		$('#entry_slider').on( "slidechange", function( event, ui ) {
 			$('#slider_val').html(ui.value);
+			$('#ritual_starting_level').attr('value', ui.value);
+			console.log($('#ritual_starting_level').attr('value'));
 		});
 
 		console.log(value);		
