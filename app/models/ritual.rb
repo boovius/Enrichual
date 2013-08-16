@@ -2,7 +2,7 @@ class Ritual
   include MongoMapper::EmbeddedDocument
 
   belongs_to :user
-
+  
   # pattern keys
   key :title, String
   key :target, String
@@ -15,10 +15,14 @@ class Ritual
   key :users_rating, Integer
   key :program_id, String
 
+
+  many :steps
+
   #unique keys
   key :starts_on, Date
   key :ends_on, Date
   key :starting_level, Integer
+  key :checkin_time, Time
 
 
   

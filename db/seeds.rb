@@ -123,29 +123,29 @@ sleep2 = Program.create({
 
 tsleep = Ritual.new({
 	program_id: sleep1.id,
-	daily_raitings: [
+	daily_ratings: [
 		{
-			raiting: 6,
+			rating: 6,
 			date: "2013-08-13"
 		},
 		{
-			raiting: 7,
+			rating: 7,
 			date: "2013-08-14"
 		},
 		{
-			raiting: 5,
+			rating: 5,
 			date: "2013-08-15"
 		},
 		{
-			raiting: 7,
+			rating: 7,
 			date: "2013-08-16"
 		},
 		{
-			raiting: 8,
+			rating: 8,
 			date: "2013-08-17"
 		},
 		{
-			raiting: 9,
+			rating: 9,
 			date: "2013-08-18"
 		}
 	]

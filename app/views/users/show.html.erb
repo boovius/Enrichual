@@ -8,7 +8,7 @@
 	<!-- implemented rituals -->
 	<div class='user_show_ritual large-6 large-offset-1 columns'>
 		<% unless @rituals.empty? %>
-				<%= render partial: 'user_ritual' %>
+				<%= render partial: 'rituals' %>
 		<% else %>
 			<h6>You have not implemented any rituals yet.  <%= link_to 'Go find one!', root_url %> </h6>
 			<br>

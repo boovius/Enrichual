@@ -1,11 +1,14 @@
+<%= form_for @ritual, url: user_rituals_path(@user), html: { autocomplete: :off } do |f| %>
 <div class='row green round'>
-	
 	<h3 class='large-offset-1 program-title'><%= link_to @program.title, @program %></h3>
+	<%= f.hidden_field :program_id, value: @program.id %>
 
 	<div id='starting_level' class='large-8 large-offset-2 columns box bottom-breath'>
 		<h5>Pick Your Starting Level</h5>
 		<p class='large-5 columns'>This is where you rate your current state so we can track how this ritual affects your life.</p>
 		<div id='slider_val' class='large-1 large-offset-5 columns '>0</div>
+		<%= f.hidden_field :starting_level %> 
+
 		<div id='entry_slider' class='large-8 large-offset-2 columns'></div>
 
 		<div id='min_legend' class='large-2 large-offset-1 columns'>
@@ -28,15 +31,19 @@
 	<div id='check_in_time' class='large-8 large-offset-2 columns box bottom-breath'>
 		<h5>Check In Time:</h5>
 		<p class='large-5 columns'>Here input a time we can check in with you each day to see how you're doing.  It'll require an input of one number.</p>
+		<%= f.time_field :checkin_time %>
 
 	</div>
 
 	
 
-	<div id='implement_button' class='large-6 large-offset-3 columns button'>Begin</div>
+	<div id='implement_button' class='large-6 large-offset-3 columns button'><%= f.submit %>Begin</div>
 	<div class='grid_placeholder large-3 columns'></div>
 
 </div>
+<% end %>
+
+
 
 <script>
 		$('#entry_slider').slider({max: 10});

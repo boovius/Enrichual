@@ -3,7 +3,13 @@ class ProgramsController < ApplicationController
   end
 
   def show
-  	 @program = Program.find params[:id]
+  	 @program = Program.find_by_id(params[:id])
+
+     puts '*' * 20 
+     puts params[:id]
+
+     puts '*' * 20 
+     puts @program
 
      @comments = @program.comments
 
