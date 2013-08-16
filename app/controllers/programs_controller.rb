@@ -5,11 +5,17 @@ class ProgramsController < ApplicationController
   def show
   	 @program = Program.find_by_id(params[:id])
 
-     puts '*' * 20 
-     puts params[:id]
+     @user = current_user
 
-     puts '*' * 20 
-     puts @program
+     @user.rituals.each do |ritual|
+       if @program.id.to_s == ritual.program_id.to_s
+         @implemented_by_user = true
+         break
+       else 
+         @implemented_by_user = false
+       end
+     end
+     
 
      @comments = @program.comments
 
@@ -19,6 +25,8 @@ class ProgramsController < ApplicationController
   	 @step2 = @program.steps[1]
   	 @step3 = @program.steps[2]
   	 @step_temp = @program.steps[0]
+
+
 
    	 if @partial
   	   if request.xhr?

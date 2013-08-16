@@ -38,8 +38,13 @@
 		</div>
 	</div>
 
-	<div class='large-12 columns'>
-		<%= button_to 'Begin', program_new_ritual_path({program_id: @program.id}), {method: :get, class: 'large-6 large-offset-3 small-centered columns button large', id: 'begin' }  %>
+	<div id='ritual_state' class='large-12 columns'>
+		<% if @implemented_by_user %>
+			<div id='already_implemented' class='large-6 large-offset-3 small-centered columns'>Ritual already implemented. <span> <%= link_to 'Go To Your Profile', @user %>&rarr;</span></div> 
+		<% else %> 
+			<%= button_to 'Begin', program_new_ritual_path({program_id: @program.id}), {method: :get, class: 'large-6 large-offset-3 small-centered columns button large', id: 'begin' }  %>
+		<% end %>
 	</div>
+	
 
 </div>

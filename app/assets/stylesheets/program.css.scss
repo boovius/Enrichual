@@ -30,14 +30,6 @@
 	font-weight: bold;
 }
 
-#begin {
-	margin-top: 50px;
-	background-color: $light-pink; 
-}
-
-#begin:hover {	
-	background-color: $pink;
-}
 
 .frequency {
 	font-style: italic;
@@ -56,4 +48,26 @@
 #comments {
 	background-color: #ccc;
 	border: none;
+}
+
+#ritual_state {
+	margin-top: 50px;
+	margin-bottom: 15px;
+}
+
+#begin {
+	background-color: $light-pink; 
+}
+
+#begin:hover {	
+	background-color: $pink;
+}
+
+#already_implemented {
+	font-size: 1.4em;
+	font-style: italic;
+	color: $denim;
+	span {
+		font-size: .7em;
+	}
 }
