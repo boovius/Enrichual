@@ -1,6 +1,7 @@
 RitualRecipes::Application.routes.draw do
 
   
+  
   root "site#index"
 
   resources :users do
@@ -18,6 +19,7 @@ RitualRecipes::Application.routes.draw do
 
   get 'programs/:id/:code' => "programs#show"
 
+  get "search" => "search#index"
  
 
   # Login

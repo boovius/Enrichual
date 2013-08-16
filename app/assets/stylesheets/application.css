@@ -34,7 +34,7 @@ html, body {
 	background-color: #27ae60;
 }
 
-.sea_green {
+.sea-green {
 	background-color: #16A085;
 }
 
@@ -44,6 +44,10 @@ html, body {
 
 .cloudy-blue {
 	background-color: #ECF0F1;
+}
+
+.my-blue {
+	background-color: #2980B9;
 }
 
 .white {
