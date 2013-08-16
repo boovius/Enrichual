@@ -4,7 +4,7 @@ $(function() {
       method: 'GET',
       url: "/programs/" + href,
       success: function(html) {
-        $('.description').empty();
+        $('.step_description').empty();
         $('#' + href.split('/')[1]).append(html);
       }
     });
@@ -26,7 +26,7 @@ $(function() {
     event.preventDefault();
   });
 
-  $(".description a").click(function(event) {
+  $(".step_description a").click(function(event) {
     console.log(rit_id);
     var href = $(this).attr("href");
 
@@ -36,7 +36,7 @@ $(function() {
 
     history.pushState({}, "", "/programs/" + rit_id);
 
-    $('.description').empty();
+    $('.step_description').empty();
     
     event.preventDefault();
   });
