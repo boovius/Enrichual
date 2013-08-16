@@ -6,7 +6,7 @@
 <div class='row white round'>
 	<h1 class='large-12 columns'><%= @user.name %></h1>
 	<!-- implemented rituals -->
-	<div class='user_show_ritual large-6 large-offset-1 columns'>
+	<div class='user_show_ritual large-6 large-offset-1 columns bottom-breath'>
 		<% unless @rituals.empty? %>
 				<%= render partial: 'rituals' %>
 		<% else %>
@@ -17,7 +17,7 @@
 		<% end %>
 	</div>
 	<!-- created rituals -->
-	<div class='user_created_ritual large-3 large-offset-1 columns sea_green'>
+	<div class='user_created_ritual large-3 large-offset-1 columns sea_green bottom-breath'>
 		<h5>Rituals Created:</h5>
 		<% unless @created_programs.empty? %> 
 				<%= render partial: 'created_program' %>
