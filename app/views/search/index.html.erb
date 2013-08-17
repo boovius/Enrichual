@@ -4,9 +4,14 @@
 	}
 </style>
 <div class='row'>
-	<div id="query" class='large-5 columns'>Search Query</div>
+	<div class='row'>
+		<h3 id="query" class='large-5 columns'>I WANT... <span><%= @query %></span></h3>
+	</div>
+	<div class='row'>
+		<hr class='large-5 columns'>
+	</div>
 	<% @results.each do |result| %>	
-		<% render partial: 'result', object: result %>
+		<%= render partial: 'result', object: result %>
 	<% end %>
 </div>
 

@@ -35,7 +35,7 @@ comment2 = Comment.new({
 
 sleep1 = Program.create({
 	title: 'Sleep Like a Saint',
-	target: 'Sleep',
+	target: 'sleep',
 	objective: 'get better sleep',
 	creator: user1,
 	description: 'The following ritual involves diligent setting of bed time with a relaxing cup of chamomile and reading.',

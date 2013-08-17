@@ -19,7 +19,7 @@ RitualRecipes::Application.routes.draw do
 
   get 'programs/:id/:code' => "programs#show"
 
-  get "search" => "search#index"
+  get "search/:query" => "search#index"
  
 
   # Login

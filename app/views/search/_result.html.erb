@@ -1,3 +1,18 @@
-<div class='large-6 large-offset-2 columns'></div> <%= result.title %>
-<div class='large-2 right'></div> <%= result.users_rating %>
-<div class='large-5 large-offset-3 columns'></div> <%= result.description %>
+<div class='row large-10 large-offset-1 result round'>
+	<h4 class='large-6 large-offset-2 columns'>
+		<%= result[:title] %>
+	</h4> 
+	<h4 class='large-2 columns'>
+		<%= result[:users_rating] %>
+	</h4>
+	<div class='search-arrow left'>&rarr;</div> 
+	<div class='large-5 large-offset-3 columns result_description'>
+		<%= result[:description]%>
+	</div>
+</div> 
+
+<script> 
+	$('.result').click(function(){
+		window.location = '/programs/' + <%= result[:id] %> +' ';
+	})
+</script>

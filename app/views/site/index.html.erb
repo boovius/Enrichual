@@ -7,12 +7,17 @@
 <div class='row landing'>
 	<div id='intro_box' class='large-3 small-6 columns panel'><span>Rituals</span> are a 3 step process, done at a regular interval to improve a certain area of your life. <br><br>Just finish the "I want..." sentence and search to begin. 
 	</div>
-
 	<div id='search_area' class='large-7 small-left large-offset-1 columns'>
-			<input id='search_box' class='large-9 small-6 columns' type='text' placeholder='...to get better sleep' />
+			<input id='search_box' name='query' class='large-9 small-6 columns' type='text' placeholder='...to get better sleep' />
 			<label id='iwant' for="search_box" class='large-3 pull-9 columns'>I want</label>
-			<div id='search_button' class='pink button large large-3 small-5 push-1
-			 columns'>search</div>
+			<input id='search_button' type='submit' class='pink button large large-3 small-5 push-1
+			 columns'value='search' />
 	</div>
-	
 </div> <!-- end row -->
+
+<script>
+	$('#search_button').click(function(){
+		var input = $('#search_box').val();
+		window.location = '/search/' + input; 
+	});
+</script>

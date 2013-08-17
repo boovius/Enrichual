@@ -54,6 +54,11 @@ html, body {
 	background-color: #fff;
 }
 
+/* fonts and text */
+.italics {
+	font-style: italic;
+}
+
 
 /* floats and alignments */
 
