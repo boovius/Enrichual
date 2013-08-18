@@ -1,20 +1,14 @@
-<div class='row large-10 large-offset-1 result round'>
-	<h4 class='large-6 large-offset-2 columns'>
-		<%=link_to result[:title], result %>
-	</h4> 
-	<h4 class='large-2 columns'>
-		<%= result[:users_rating] %>
-	</h4>
-	<div class='search-arrow left'><%= link_to 'Implement', result %></div> 
-	<div class='large-5 large-offset-3 columns result_description'>
-		<%= result[:description]%>
-	</div>
-</div> 
-
-
-<script> 
-	$('.result').click(function(){
-		console.log(<%=result%>);
-		//window.location = <%= link_to result %>
-	})
-</script>
+<%= link_to result do %> 
+	<div class='row large-10 large-offset-1 result round'>
+		<h4 class='large-6 large-offset-2 columns'>
+			<%= result[:title] %>
+		</h4> 
+		<h4 class='large-2 columns'>
+			<%= result[:users_rating] %>
+		</h4>
+		<div class='search-arrow left'>&rarr;</div> 
+		<div class='large-5 large-offset-3 columns result_description'>
+			<%= result[:description]%>
+		</div>
+	</div> 
+<% end %>	

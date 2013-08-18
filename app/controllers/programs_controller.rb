@@ -7,8 +7,6 @@ class ProgramsController < ApplicationController
 
      @user = current_user
 
-     is_authenticated
-
      @user.rituals.each do |ritual|
        if @program.id.to_s == ritual.program_id.to_s
          @implemented_by_user = true
