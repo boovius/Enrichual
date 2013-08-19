@@ -7,15 +7,16 @@ class ProgramsController < ApplicationController
 
      @user = current_user
 
-     @user.rituals.each do |ritual|
-       if @program.id.to_s == ritual.program_id.to_s
-         @implemented_by_user = true
-         break
-       else 
-         @implemented_by_user = false
+     if @user 
+       @user.rituals.each do |ritual|
+         if @program.id.to_s == ritual.program_id.to_s
+           @implemented_by_user = true
+           break
+         else 
+           @implemented_by_user = false
+         end
        end
      end
-     
 
      @comments = @program.comments
 
@@ -37,6 +38,10 @@ class ProgramsController < ApplicationController
   end
 
   def new
+  end
+
+  def create 
+    @program.target.downcase
   end
 
   def edit

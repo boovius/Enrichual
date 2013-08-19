@@ -1,6 +1,7 @@
 class RitualsController < ApplicationController
 
   def new
+    is_authenticated?
   	@program = Program.find_by_id(params[:program_id])
     @ritual = Ritual.new
     @user = current_user
@@ -25,6 +26,7 @@ class RitualsController < ApplicationController
   	current_user.save 
 
     redirect_to user_path(current_user.id), notice: "Ritual successfully implemented!"
+
   end
 
 

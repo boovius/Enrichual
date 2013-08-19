@@ -1,14 +1,19 @@
 class SearchController < ApplicationController
   def index
 
-  	puts '*' * 20
-  	puts 'params'
-  	puts params
   	@query = params[:query]
   	@results = []
 
+    @programs = Program.all
+
+    @programs.each do |program|
+      program.target.downcase!
+      program.save
+    end
 
   	search_words = params[:query].split(' ')
+
+    puts '*' * 20 
 
   	search_words.each do |word|
   		result = Program.where(target: word)
@@ -17,8 +22,6 @@ class SearchController < ApplicationController
   		end
   	end
 
-  	puts '*' *20
-  	puts 'results'
-  	puts @results
+
   end
 end
