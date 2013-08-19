@@ -1,7 +1,7 @@
 User.destroy_all
 Program.destroy_all
 
-user1 = User.create({
+vv = User.new({
   	name: "Vanessa Vengco",
     email: "vengco@gmail.com",
     password: "12345",
@@ -23,6 +23,14 @@ user3 = User.create({
 })
 
 
+user4 = User.create({
+  	name: "Sam Diggidy",
+    email: "sam@mistobox.com",
+    password: "12345",
+    password_confirmation: "12345"
+})
+
+
 comment1 = Comment.new({
 	comment: "This thing is amazing!",
 	user: user2
@@ -37,7 +45,7 @@ sleep1 = Program.create({
 	title: 'Sleep Like a Saint',
 	target: 'sleep',
 	objective: 'get better sleep',
-	creator: user1,
+	creator: vv,
 	description: 'The following ritual involves diligent setting of bed time with a relaxing cup of chamomile and reading.',
 	frequency: 'daily',
 	days_to_complete: '30',
@@ -121,8 +129,87 @@ sleep2 = Program.create({
 	users_rating: '8.2'
 })
 
+commentWake = Comment.new({
+	comment: "This really helped me start my days right!",
+	user: vv
+})
+
+wakeUp = Program.create({
+	title: 'Wake like an Angel',
+	target: 'Wake Up',
+	objective: 'Wake up easier',
+	creator: user4,
+	description: 'Wake up and start everyday relaxed, easy, and stress free.',
+	frequency: 'daily',
+	days_to_complete: '30',
+	comments: [commentWake],
+	steps: [{
+		name: 'get water',
+		description: 'Wake up and get a glass of water. Drink it.',
+		location: 'home',
+		duration: '3',
+		supplies: [{
+			supply: 'glass of water',
+			quantity: '1',
+		}],
+	},
+	{
+		name: 'Music',
+		description: 'Turn on soothing, relaxing music full of postive energy',
+		location: 'home',
+		duration: '1',
+		supplies: [{
+			supply: 'music player',
+			quantity: '1',
+		}],
+	},
+	{
+		name: 'meditate',
+		description: 'meditate to soothing music',
+		location: 'home',
+		duration: '15',
+		supplies: [{
+			supply: '',
+			quantity: '',
+		}],
+	}],
+	min_rating_descrip: 'I hate the entire world!!',
+	max_rating_descrip: 'Waking up is my favorite part of the day!',
+	users_rating: '8.6'
+})
+
 tsleep = Ritual.new({
 	program_id: sleep1.id,
+	daily_ratings: [
+		{
+			rating: 6,
+			date: "2013-08-13"
+		},
+		{
+			rating: 7,
+			date: "2013-08-14"
+		},
+		{
+			rating: 5,
+			date: "2013-08-15"
+		},
+		{
+			rating: 7,
+			date: "2013-08-16"
+		},
+		{
+			rating: 8,
+			date: "2013-08-17"
+		},
+		{
+			rating: 9,
+			date: "2013-08-18"
+		}
+	]
+})
+
+vWake = Ritual.new({
+	program_id: wakeUp.id,
 	daily_ratings: [
 		{
 			rating: 6,
@@ -160,3 +247,7 @@ tbone = User.create({
     password_confirmation: "12345",
     rituals: [tsleep]
 })
+
+vv.rituals << vWake
+
+vv.save
