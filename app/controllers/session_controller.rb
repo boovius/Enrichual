@@ -32,7 +32,7 @@ class SessionController < ApplicationController
 
   		if user
 			session[:user_id] = user.id
-	  		redirect_to root_url, notice: "You've successfully logged in!"
+	  		redirect_to user_path(user.id), notice: "You've successfully logged in!"
 	  	else
 	  		render :new
 	  	end

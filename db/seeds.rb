@@ -136,7 +136,7 @@ commentWake = Comment.new({
 
 wakeUp = Program.create({
 	title: 'Wake like an Angel',
-	target: 'Wake Up',
+	target: 'Wake',
 	objective: 'Wake up easier',
 	creator: user4,
 	description: 'Wake up and start everyday relaxed, easy, and stress free.',

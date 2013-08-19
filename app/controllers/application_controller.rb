@@ -11,5 +11,10 @@ class ApplicationController < ActionController::Base
      redirect_to login_url unless current_user
    end
 
+   def debug(key, value)
+   	puts '*' * 20
+   	puts key
+   	puts value
+   end
 
 end
