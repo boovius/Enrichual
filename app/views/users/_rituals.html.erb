@@ -5,7 +5,7 @@
 			<h3 class='ilb'><%= link_to @program.title, @program %></h3>
 			<h3 class='right right-breath'><%= r.starting_level %></h3>
 		</div>
-		<div class='user_show_ritual_data large-offset-2 columns'>
+		<div class='user_show_ritual_data large-10 large-offset-2 columns'>
 			<% unless r.daily_ratings.empty? %> 
 				<% r.daily_ratings.each do |dr| %>
 				<ul class='left rating'>
