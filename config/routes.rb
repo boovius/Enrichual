@@ -1,7 +1,6 @@
 RitualRecipes::Application.routes.draw do
 
   
-  
   root "site#index"
 
   resources :users do
@@ -17,10 +16,15 @@ RitualRecipes::Application.routes.draw do
      get 'rituals/new' => "rituals#new", as: :new_ritual
   end
 
+  #push state
   get 'programs/:id/:code' => "programs#show"
 
+  #search 
   get "search/:query" => "search#index"
  
+  #twilio SMS
+  get "sms/send_sms" => "sms#send_sms" 
+  get '/sms' => 'sms#receive_sms'
 
   # Login
   get "login" => "session#new"

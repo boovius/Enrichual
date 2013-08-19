@@ -9,6 +9,9 @@ gem 'mongo_mapper', github: 'jnunemaker/mongomapper', ref: 'e0d7db141b2c330eb447
 gem 'bson_ext' 
 gem 'genghisapp'
 
+gem 'twilio-ruby'
+gem "localtunnel", "~> 0.3"
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
