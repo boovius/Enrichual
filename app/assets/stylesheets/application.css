@@ -25,6 +25,10 @@ html, body {
 	margin: 0 auto -60px;
 }
 
+.top-bar {
+	margin-bottom: 0;
+}
+
 .push {
 	height: 60px;
 }

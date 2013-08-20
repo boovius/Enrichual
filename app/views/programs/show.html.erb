@@ -1,56 +1,63 @@
-<style>
-	body {
-		background: #27AE60; 
-	}
-</style>
+<section class='program-show green'>
 
-<div class='row program'>
-	<div id='program_headline' class='large-12 columns'>
-		<h3 class='program_title large-6 columns'><%= @program.title %></h3>
-		<h3 class='large-2 large-offset-4 columns'><%= @program.users_rating %></h3>
-		<p  class='large-11 large-offset-1 columns'><%= @program.description %></p>
-	</div>
+	<div class='row program bottom-breath'>
+		<div id='program_headline' class='large-12 columns'>
+			<h3 class='program_title large-6 columns'><%= @program.title %></h3>
+			<h3 class='large-2 large-offset-4 columns'><%= @program.users_rating %></h3>
+			<p  class='large-11 large-offset-1 columns'><%= @program.description %></p>
+		</div>
 
-	<div id='steps_and_comments' class='large-12 columns'>
-		<div id='frequency' class='large-12 columns frequency'>
-			<h4>Done: <%= @program.frequency %></h4>
-		</div>
-		<div id='steps' class='large-7 large-offset-1 columns'>
-			<div id='step1' class='step'>
-				<a href="<%= @program._id %>/step1 "><h4>Step 1: &nbsp&nbsp"<%=@program.steps[0].name %>"</h4></a>
-				<%= if @partial == "step1" then render partial: "step1" end %>
+		<div id='steps_and_comments' class='large-12 columns'>
+			<div id='frequency' class='large-12 columns frequency'>
+				<h4>Done: <%= @program.frequency %></h4>
 			</div>
-			<div id='step2' class='step'>
-				<a href="<%= @program._id %>/step2 "><h4>Step 2: &nbsp&nbsp"<%=@program.steps[1].name %>"</h4></a>
-				<%= if @partial == "step2" then render partial: "step2" end %>
+			<div id='steps' class='large-7 large-offset-1 columns'>
+				<div id='step1' class='step'>
+					<a href="<%= @program._id %>/step1 "><h4>Step 1: &nbsp&nbsp"<%=@program.steps[0].name %>"</h4></a>
+					<%= if @partial == "step1" then render partial: "step1" end %>
+				</div>
+				<div id='step2' class='step'>
+					<a href="<%= @program._id %>/step2 "><h4>Step 2: &nbsp&nbsp"<%=@program.steps[1].name %>"</h4></a>
+					<%= if @partial == "step2" then render partial: "step2" end %>
+				</div>
+				<div id='step3' class='step'>
+					<a href="<%= @program._id %>/step3 "><h4>Step 3: &nbsp&nbsp"<%=@program.steps[2].name %>"</h4></a>
+					<%= if @partial == "step3" then render partial: "step3" end %>
+				</div>
+				<div id='total_duration'>
+					<h5><span>Total Time Per Period: </span><%= @program.total_duration %></h5>
+				</div> 
 			</div>
-			<div id='step3' class='step'>
-				<a href="<%= @program._id %>/step3 "><h4>Step 3: &nbsp&nbsp"<%=@program.steps[2].name %>"</h4></a>
-				<%= if @partial == "step3" then render partial: "step3" end %>
+			<div id='comments' class='large-3 large-offset-1 columns box'>
+				<h4>Users' Comments</h4>
+						<%= render partial: "comments" %>
 			</div>
-			<div id='total_duration'>
-				<h5><span>Total Time Per Period: </span><%= @program.total_duration %></h5>
-			</div> 
 		</div>
-		<div id='comments' class='large-3 large-offset-1 columns box'>
-			<h4>Users' Comments</h4>
-					<%= render partial: "comments" %>
-		</div>
-	</div>
 
-	<div id='ritual_state' class='large-12 columns'>
-		<% if @implemented_by_user %>
-			<div id='already_implemented' class='large-6 large-offset-3 small-centered columns'>Ritual already implemented. <span> <%= link_to 'Go To Your Profile', @user %>&rarr;</span></div> 
-		<% else %> 
-			<%= button_to 'Begin', program_new_ritual_path({program_id: @program.id}), {method: :get, class: 'large-6 large-offset-3 small-centered columns button large', id: 'begin' }  %>
+		<% if @user %>
+			<div id='ritual_state' class='large-12 columns'>
+				<% if @implemented_by_user %>
+					<div id='already_implemented' class='large-6 large-offset-3 small-centered columns'>Ritual already implemented. <span> <%= link_to 'Go To Your Profile', @user %>&rarr;</span></div> 
+				<% else %> 
+					<%= button_to 'Begin', program_new_ritual_path({program_id: @program.id}), {method: :get, class: 'large-6 large-offset-3 small-centered columns button large', id: 'begin' }  %>
+				<% end %>
+			</div>
+		<% else %>
+			<a href="/login" class="boxdata large-6 large-offset-3 small-centered columns button large" data-reveal-id="login-modal" data-reveal-ajax="true">Log In to add</a>
 		<% end %>
+		
+
 	</div>
-	
 
-</div>
-
+  <div id="login-modal" class="reveal-modal my-blue">
+    <div id="login-modal-content"></div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+</section>
 
 <script>
+
+
   var showPartial = function(href) {
     $.ajax({
       method: 'GET',
@@ -95,6 +102,6 @@
   
   // $.History.on('change', function(event, url, type) {
   //     showPartial(url);
-  // }).listen('pathname');  
+  // }).listen('pathname'); 
 
 </script>

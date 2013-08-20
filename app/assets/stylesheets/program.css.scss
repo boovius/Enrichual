@@ -1,11 +1,18 @@
 @import "variables";
 
+.program-show {
+	height: 100%;
+	width: 100%;
+	padding-top: 20px;
+}
+
 .program {
 	border-radius: 10px;
 	background-color: #ECF0F1;
 	padding-right: 20px;
 	padding-top: 20px;
 	overflow: scroll;
+
 }
 
 .program_title {
