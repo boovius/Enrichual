@@ -210,6 +210,7 @@ tsleep = Ritual.new({
 
 vWake = Ritual.new({
 	program_id: wakeUp.id,
+	starting_level: 4,
 	daily_ratings: [
 		{
 			rating: 6,

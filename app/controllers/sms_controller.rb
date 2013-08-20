@@ -12,14 +12,13 @@ class SmsController < ApplicationController
 		
 		 @client.account.sms.messages.create(from: "+1#{twilio_phone_number}", to: number_to_send_to, body: "This is a message. Hooray! It gets sent to #{number_to_send_to}. And sent from #{twilio_phone_number}")
 
-		 hello
   end
 
   def receive_sms
   	message_body = params["Body"]
   	from_number = params["From"]
 
-  	
+
   	 
   	#SMSLogger.log_text_message from_number, message_body
 

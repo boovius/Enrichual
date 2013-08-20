@@ -6,7 +6,7 @@
 
 <div class="row">
 	<div class="large-6 large-offset-3 columns round cloudy-blue">
-		<h3>Welcome</h3>
+		<h3>Welcome to Enrichual</h3>
 		<p>If signing up or password forgotten, just plop in your email and leave the password field blank.</p>
 		<p>We will send you a link with instructions.</p>
 	</div> <!-- end large-4 columns -->
@@ -26,3 +26,27 @@
 		</form>
 	</div> <!-- end 8 columns -->
 </div> <!-- end row -->
+
+<script>
+	$('#toggle-password-field').on('click', function(evt){
+		
+		if ($(this).hasClass('alert')) {
+		  $(this).val('Hide Password');
+		  
+		  $(this).removeClass('alert');
+		  $(this).addClass('success');
+
+		  $('#password').attr('type','text');
+		}
+		else {
+      $(this).val('Show Password');
+      
+      $(this).removeClass('success');
+      $(this).addClass('alert');
+      
+      $('#password').attr('type','password');
+
+		}
+		return false;
+	});
+</script>
