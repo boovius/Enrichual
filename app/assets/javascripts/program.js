@@ -3,6 +3,7 @@ $(function() {
 	$('[data-reveal-id=login-modal]').click(function(event){
 			console.log('data-reveal-modal clicked');
 			var href = $(this).attr('href');
+			console.log(href);
 	    $.ajax({
      		url : href,
      		success: function(html) {

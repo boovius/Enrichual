@@ -4,17 +4,21 @@ class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
   def current_user
-     @current_user ||= User.find(session[:user_id])
-   end
+    @current_user ||= User.find(session[:user_id])
+  end
    
-   def is_authenticated?
-     redirect_to login_url unless current_user
-   end
+  def is_authenticated?
+    redirect_to login_url unless current_user
+  end
 
-   def debug(key, value)
-   	puts '*' * 20
-   	puts key
-   	puts value
-   end
+  def current_program
+    @current_program ||= Program.find(params[:program_id])
+  end
+
+  def debug(key, value)
+ 	  puts '*' * 20
+ 	  puts key
+ 	  puts value
+  end
 
 end

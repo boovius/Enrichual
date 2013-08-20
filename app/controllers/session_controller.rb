@@ -1,13 +1,10 @@
 class SessionController < ApplicationController
   def new
+  	
   end
 
   def create
-  	puts '*'*20
-		puts 'in session create'
 		if params[:password].blank?
-			puts '*'*20
-			puts 'password blank'
 			user = User.find_by_email(params[:email])
 
 			if user
@@ -32,7 +29,13 @@ class SessionController < ApplicationController
 
   		if user
 			session[:user_id] = user.id
-	  		redirect_to user_path(user.id), notice: "You've successfully logged in!"
+				debug('params[:program_id]', params[:program_id])
+				if current_program
+					redirect_to program_path(program.id), notice: "You've successfully logged in!"
+				else
+					redirect_to user_path(user.id), notice: "You've successfully logged in!"
+				end
+	  		
 	  	else
 	  		render :new
 	  	end

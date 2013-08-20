@@ -1,2 +1,35 @@
-<h1>Programs#new</h1>
-<p>Find me in app/views/programs/new.html.erb</p>
+<style>
+	body {
+		background-color: #ECF0F1;
+	}
+</style>
+
+<div class="row">
+	<h1>Create a new Ritual Program</h1>
+  <div class="large-3 columns large-offset-2">
+
+    <%= form_for @program, html: { autocomplete: :off } do |f| %>
+			<%= f.label :title %>
+			<%= f.text_field :title %>
+			<%= f.label :target %>
+			<%= f.text_field :target %>
+			<%= f.label :description %>
+			<%= f.text_field :description %>
+			<%= f.label :frequency %>
+			<%= f.text_field :frequency %>
+			<%= f.label :min_rating_descrip %>
+			<%= f.text_field :min_rating_descrip %>
+			<%= f.label :max_rating_descrip %>
+			<%= f.text_field :max_rating_descrip %>
+
+			<p></p>
+			<p>
+        <%# We start with the submit button disabled. %>
+        <%= f.submit "Create new Ritual", id: "save-password", class: "button alert disabled" %>
+      </p>
+		<% end %>
+	</div>
+
+</div>
+
+

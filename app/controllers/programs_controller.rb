@@ -1,5 +1,6 @@
 class ProgramsController < ApplicationController
   def index
+    @program = Program.new
   end
 
   def show
@@ -34,6 +35,8 @@ class ProgramsController < ApplicationController
   	     render :partial => "#{params[:code]}"
   	   end
   	 end
+
+     current_program
 
   end
 

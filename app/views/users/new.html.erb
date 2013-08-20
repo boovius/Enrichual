@@ -1,5 +1,11 @@
-<h1>Create Your Account</h1>
+<style>
+	body {
+		background-color: #ECF0F1;
+	}
+</style>
+
 <div class="row">
+	<h1>Create Your Account</h1>
   <div class="large-3 columns large-offset-2">
 
     <%= form_for @user, html: { autocomplete: :off } do |f| %>
@@ -28,6 +34,8 @@
 			<%= f.text_field :name %>
 			<%= f.label :born_on %>
 			<%= f.date_field :born_on %>
+			<%= f.label :phone_number %>
+			<%= f.text_field :phone_number %>
 			<%= f.label :gender, for: :is_male %>
 			<%= f.select :is_male, [['female', false], ['male', true]] %>
 			<p></p>

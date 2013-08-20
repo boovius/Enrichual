@@ -11,6 +11,7 @@ class User
   key :expires_at, Time
   key :is_male, Boolean
   key :born_on, Date
+  key :phone_number, String
 
  
   many :rituals
