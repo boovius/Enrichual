@@ -7,7 +7,7 @@
 require_relative "../config/boot"
 require_relative "../config/environment"
 require "clockwork"
-include Clockwork
+
 
 class MyWorker
   include Sidekiq::Worker
@@ -23,7 +23,9 @@ class MyWorker
   end
 end
 
+module Clockwork
   # Kick off a bunch of jobs early in the morning
-  every 1.hour, 'my_worker.late_night_work', at: '**:*0' do
+  every 10.seconds, 'my_worker.late_night_work' do
     MyWorker.late_night_work
   end
+end
