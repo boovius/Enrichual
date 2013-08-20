@@ -12,6 +12,9 @@ gem 'genghisapp'
 gem 'twilio-ruby'
 gem "localtunnel", "~> 0.3"
 
+gem "clockwork", "~> 0.6.0"
+gem 'sidekiq'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
