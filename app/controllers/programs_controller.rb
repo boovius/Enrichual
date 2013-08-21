@@ -69,7 +69,7 @@ class ProgramsController < ApplicationController
       step3.duration = params[:step3_duration]
       @program.steps << step3
 
-
+    @program['creator_id'] = current_user.id
     @program['target'] = @program['target'].downcase
 
     #debug('@program', @program.save)
