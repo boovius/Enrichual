@@ -1,9 +1,14 @@
+<style>
+		body{
+			background-color: #ECF0F1;
+			}
+</style>
 <%= form_for @ritual, url: user_rituals_path(@user), html: { autocomplete: :off } do |f| %>
-<div class='row green round'>
+<div class='row denim round top-breath'>
 	<h3 class='large-offset-1 program-title'><%= link_to @program.title, @program %></h3>
 	<%= f.hidden_field :program_id, value: @program.id %>
 
-	<div id='starting_level' class='large-8 large-offset-2 columns box bottom-breath'>
+	<div id='starting_level' class='large-8 large-offset-2 columns box round green bottom-breath'>
 		<h5>Pick Your Starting Level</h5>
 		<p class='large-5 columns'>This is where you rate your current state so we can track how this ritual affects your life.</p>
 		<div id='slider_val' class='large-1 large-offset-5 columns '>0</div>
@@ -29,7 +34,7 @@
 	</div>
 
 		
-	<div id='check_in_time' class='large-8 large-offset-2 columns box bottom-breath'>
+	<div id='check_in_time' class='large-8 large-offset-2 columns box bottom-breath green round'>
 		<h5>Check In Time:</h5>
 		<p class='large-5 columns'>Here input a time we can check in with you each day to see how you're doing.  It'll require an input of one number.</p>
 		<%= f.time_field :checkin_time, class: "large-3 left large-offset-2 columns" %>
@@ -38,7 +43,7 @@
 
 	
 
-	<div id='implement_button'><%= f.submit class: 'large-6 large-offset-3 columns button' %>Begin</div>
+	<div id='implement_button'><%= f.submit class: 'large-6 large-offset-3 columns button' %></div>
 	<div class='grid_placeholder large-3 columns'></div>
 
 </div>

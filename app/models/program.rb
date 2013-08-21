@@ -1,6 +1,8 @@
 class Program
   include MongoMapper::Document
 
+  attr_accessor :step1_name
+
   key :title, String, unique: true 
   key :target, String
   key :objective, String

@@ -1,5 +1,6 @@
 User.destroy_all
 Program.destroy_all
+Registrant.destroy_all
 
 vv = User.new({
   	name: "Vanessa Vengco",
@@ -176,6 +177,50 @@ wakeUp = Program.create({
 	min_rating_descrip: 'I hate the entire world!!',
 	max_rating_descrip: 'Waking up is my favorite part of the day!',
 	users_rating: '8.6'
+})
+
+wakeUp2 = Program.create({
+	title: 'Wake like a sleepy giant',
+	target: 'Wake',
+	objective: 'Wake up easier',
+	creator: user4,
+	description: 'Wake up like a slumbering idiot.',
+	frequency: 'daily',
+	days_to_complete: '30',
+	comments: [],
+	steps: [{
+		name: 'get water',
+		description: 'Wake up and get a glass of water. Drink it.',
+		location: 'home',
+		duration: '3',
+		supplies: [{
+			supply: 'glass of water',
+			quantity: '1',
+		}],
+	},
+	{
+		name: 'Music',
+		description: 'Turn on soothing, relaxing music full of postive energy',
+		location: 'home',
+		duration: '1',
+		supplies: [{
+			supply: 'music player',
+			quantity: '1',
+		}],
+	},
+	{
+		name: 'meditate',
+		description: 'meditate to soothing music',
+		location: 'home',
+		duration: '15',
+		supplies: [{
+			supply: '',
+			quantity: '',
+		}],
+	}],
+	min_rating_descrip: 'I hate the entire world!!',
+	max_rating_descrip: 'Waking up is my favorite part of the day!',
+	users_rating: '7'
 })
 
 tsleep = Ritual.new({
