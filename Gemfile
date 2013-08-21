@@ -22,6 +22,10 @@ group :development, :test do
   gem "better_errors"
 end
 
+group :production do 
+	gem 'rails_12factor'
+end
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
