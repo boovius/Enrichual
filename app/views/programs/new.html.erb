@@ -6,26 +6,53 @@
 
 <div class="row">
 	<h1>Create a new Ritual Program</h1>
-  <div class="large-3 columns large-offset-2">
+  <div class="large-4 columns large-offset-2">
 
     <%= form_for @program, html: { autocomplete: :off } do |f| %>
 			<%= f.label :title %>
 			<%= f.text_field :title %>
 			<%= f.label :target %>
-			<%= f.text_field :target %>
+			<%= f.text_field :target, placeholder: 'i.e. sleep, stress, commute' %>
 			<%= f.label :description %>
-			<%= f.text_field :description %>
+			<%= f.text_area :description, maxlength: 160 %>
 			<%= f.label :frequency %>
-			<%= f.text_field :frequency %>
-			<%= f.label :min_rating_descrip %>
+			<%= f.text_field :frequency, placeholder: 'i.e. daily'%>
+			<%= f.label :min_rating_descrip %><span class='input-descriptors'>(describe what a 0 what feel like on a scale of 1 - 10)</span>
 			<%= f.text_field :min_rating_descrip %>
-			<%= f.label :max_rating_descrip %>
+			<%= f.label :max_rating_descrip %><span class='input-descriptors'>(describe what a 10 what feel like on a scale of 1 - 10)</span>
 			<%= f.text_field :max_rating_descrip %>
-
+			<h4>Steps</h4>
+			<h5>Step 1</h5>
+			<%= f.label :step1_name %>
+			<input type='text_field' name='step1_name' />
+			<%= f.label :step1_description %>
+			<input type='text_area' name='step1_description', maxlength='100' />
+			<%= f.label :step1_location %>
+			<input type='text_field' name='step1_location', placeholder= "'i.e. home, work'" />
+			<%= f.label :step1_duration %><span class='input-descriptors'>(in minutes)</span>
+			<input type='text_field' name='step1_duration' />
+		<h5>Step 2</h5>
+			<%= f.label :step2_name %>
+			<input type='text_field' name='step2_name' />
+			<%= f.label :step2_description %>
+			<input type='text_area' name='step2_description', maxlength='100' />
+			<%= f.label :step2_location %>
+			<input type='text_field' name='step2_location', placeholder= "'i.e. home, work'" />
+			<%= f.label :step2_duration %><span class='input-descriptors'>(in minutes)</span>
+			<input type='text_field' name='step2_duration' />
+		<h5>Step 3</h4>
+			<%= f.label :step3_name %>
+			<input type='text_field' name='step3_name' />
+			<%= f.label :step3_description %>
+			<input type='text_area' name='step3_description', maxlength='100' />
+			<%= f.label :step3_location %>
+			<input type='text_field' name='step3_location', placeholder= "'i.e. home, work'" />
+			<%= f.label :step3_duration %><span class='input-descriptors'>(in minutes)</span>
+			<input type='text_field' name='step3_duration' />
 			<p></p>
 			<p>
         <%# We start with the submit button disabled. %>
-        <%= f.submit "Create new Ritual", id: "save-password", class: "button alert disabled" %>
+        <%= f.submit "Create new Ritual", id: "save-password", class: "button" %>
       </p>
 		<% end %>
 	</div>

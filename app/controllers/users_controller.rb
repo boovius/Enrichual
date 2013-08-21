@@ -4,18 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-
+  
+    @user = User.find session[:user_id]
     
-      @user = User.find session[:user_id]
-      
-      @rituals = @user.rituals
+    @rituals = @user.rituals
 
-      @created_programs = Program.find_all_by_creator_id(@user.id)
-
-      # puts '*' * 20 
-      # puts 'created rituals'
-      # puts @created_rituals
-
+    @created_programs = Program.find_all_by_creator_id(@user.id)
    
   end
 
