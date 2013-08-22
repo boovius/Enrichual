@@ -18,10 +18,4 @@ test:
 
   # set these environment variables on your prod server
   production:
-  <<: *defaults
-  # host: mongodb://heroku_app17622662:ca3hnk7tb20q3sm7do6cr7jele@ds041248.mongolab.com:41248/heroku_app17622662
-  host: ds041178.mongolab.com ds041188.mongolab.com
-  port: 41188
-  database: enrichual
-  username: <%= ENV['MONGO_USERNAME'] %> 
-  password: <%= ENV['MONGO_PASSWORD'] %> 
+    uri: <%= ENV['MONGOLAB_URI'] %>
