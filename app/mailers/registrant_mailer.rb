@@ -1,10 +1,10 @@
 class RegistrantMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "sign-up@enritual.com"
 
   
   def registrant_email(registrant)
   	@registrant = registrant
 
-  	mail to: @registrant.email, subject: "Register for Street Beat"
+  	mail to: @registrant.email, subject: "Sign up for Enritual."
   end
 end
