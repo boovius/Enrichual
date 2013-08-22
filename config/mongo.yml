@@ -7,6 +7,9 @@ defaults: &defaults
     slave_ok: false
     ssl: false
 
+production:
+  uri: <%= ENV['MONGOHQ_URL'] %>
+
 development:
   <<: *defaults
   database: ritual_recipes_development
@@ -16,6 +19,3 @@ test:
   database: ritual_recipes_test
   w: 0
 
-  # set these environment variables on your prod server
-  production:
-    uri: <%= ENV['MONGOLAB_URI'] %>
