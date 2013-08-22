@@ -1,9 +1,9 @@
 class PasswordMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "reset@enrichual.com"
 
   def reset_email(user)
   	@user = user
 
-  	mail to: @user.email, subject: "Change your Street Beat credentials"
+  	mail to: @user.email, subject: "Reset your Enrichual password"
   end
 end
