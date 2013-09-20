@@ -226,6 +226,10 @@ DEPENDENCIES
   database_cleaner
   genghisapp
   jbuilder (~> 1.2)
+<<<<<<< HEAD
+=======
+  jquery-rails
+>>>>>>> staging
   localtunnel (~> 0.3)
   mongo_mapper!
   rails (= 4.0.0)
