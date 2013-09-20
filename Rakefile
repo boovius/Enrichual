@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RitualRecipes::Application.load_tasks
+Enrichual::Application.load_tasks
