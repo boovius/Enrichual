@@ -21,7 +21,7 @@ class User
 
   timestamps!
 
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password, :password_confirmation, :expires_at
 
   validate :validate_confirmation
 
