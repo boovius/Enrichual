@@ -1,4 +1,4 @@
-RitualRecipes::Application.routes.draw do
+Enrichual::Application.routes.draw do
 
   
   root "site#index"

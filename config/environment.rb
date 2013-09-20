@@ -2,7 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-RitualRecipes::Application.initialize!
+Enrichual::Application.initialize!
 
 ActionMailer::Base.smtp_settings = {
   :address        => 'smtp.sendgrid.net',

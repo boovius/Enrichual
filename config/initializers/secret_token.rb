@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RitualRecipes::Application.config.secret_key_base = 'c4b722a82df0c1f99d04e8cc70528136e1e68592b6c3ce4a87f3b6b5566642308bdec3473c21be7d825c2c47046b5bbb0f21e43594077c619b306096cfd54511'
+Enrichual::Application.config.secret_key_base = 'c4b722a82df0c1f99d04e8cc70528136e1e68592b6c3ce4a87f3b6b5566642308bdec3473c21be7d825c2c47046b5bbb0f21e43594077c619b306096cfd54511'
