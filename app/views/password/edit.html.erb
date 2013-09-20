@@ -1,0 +1,56 @@
+<style>
+	body {
+		background-color: #ECF0F1;
+	}
+</style>
+
+<div class="row">
+	<h1>Update Your Password</h1>
+  <div class="large-3 columns large-offset-2">
+
+    <%= form_for @user, html: { autocomplete: :off } do |f| %>
+			<%= f.label :email %>
+			<%= f.text_field :email, value: @user.email, readonly: true %>
+			<div>
+				<p>
+				  <%= f.label :password %>
+				  <%# autofocus puts the cursor in this input on page load %>
+				  <%= f.text_field :password, autofocus: true %>
+				</p>
+				<p>
+				  <%= f.label :password_confirmation %>
+				  <%= f.text_field :password_confirmation %>
+				</p>
+				  <%#
+				    This hidden field is used to pass the password strength
+				    back to the server so we can be sure the password is
+				    strong enough.
+				  %>
+				  <input id="hidden-strength" type="hidden" name="strength" value="0">
+
+			</div>
+			<p>
+        <%# We start with the submit button disabled. %>
+        <%= f.submit "Update Your Password", id: "save-password", class: "button alert disabled" %>
+      </p>
+		<% end %>
+	</div>
+  <div class="large-7 columns">
+    <%#
+      This is the password strength meter. We will use the
+      w-# class to change it using jQuery.
+    %>
+    <div class="progress large-6 strength-meter">
+      <span id="strength-meter" class="meter w-0"></span>
+    </div>
+    <div>
+      Time to crack: <span id="time-to-crack">n/a</span>
+    </div>
+  </div>
+</div>
+
+<%#
+  We link to the strength-meter script here so that it's only
+  loaded on the password reset page, not every page.
+%>
+<script type="text/javascript" src="/js/zxcvbn-async.js"></script>
